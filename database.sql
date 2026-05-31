@@ -1,3 +1,6 @@
+-- Schema MySQL di MoneyTracker.
+-- Dopo l'import, visita una volta install.php per impostare l'admin con password hashata.
+
 CREATE DATABASE IF NOT EXISTS moneytracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE moneytracker;
 
@@ -22,16 +25,7 @@ CREATE TABLE IF NOT EXISTS spese (
     CONSTRAINT fk_spese_utente FOREIGN KEY (user_id) REFERENCES utenti(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS obiettivi (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    importo_target DECIMAL(10,2) NOT NULL,
-    user_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY (id),
-    UNIQUE KEY uq_obiettivi_user (user_id),
-    CONSTRAINT fk_obiettivi_utente FOREIGN KEY (user_id) REFERENCES utenti(id) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Hash bcrypt di placeholder (non utilizzabile per login): dopo l'import esegui install.php per admin123
+-- Placeholder: install.php lo sostituisce con l'hash reale di admin123.
 INSERT INTO utenti (username, password, ruolo) VALUES (
     'admin',
     '$2y$10$12345678901234567890121234567890123456789012345678901',

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+// Tieni qui i dati del database: se cambi ambiente, questa e' la prima porta da aprire.
+
 $dbHost = 'localhost';
 $dbName = 'moneytracker';
 $dbUser = 'root';
