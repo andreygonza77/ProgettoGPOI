@@ -5,7 +5,6 @@ session_start();
 
 require_once __DIR__ . '/../config/db.php';
 
-// Se la sessione e' gia' viva, non facciamo ripassare l'utente dal login.
 if (!empty($_SESSION['user_id'])) {
     header('Location: ../user/dashboard.php');
     exit;
@@ -88,5 +87,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 
     <script src="../js/script.js" defer></script>
-</body>
+  </body>
 </html>
