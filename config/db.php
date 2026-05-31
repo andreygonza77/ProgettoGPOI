@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 $dbHost = 'localhost';
 $dbName = 'moneytracker';
 $dbUser = 'root';
